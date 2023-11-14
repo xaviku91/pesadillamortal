@@ -5,28 +5,29 @@ Este repositorio es utilizado para el desarrollo del videojuego creado por el gr
 ## **1. INTEGRANTES DEL EQUIPO DE DESARROLLO:**
 
 - **Nombre:** Xavi Quesada Sevillano 
- **Correo:** xquesadas@uoc.edu
- **Github:** [xaviku91](https://github.com/xaviku91)
+  **Correo:** xquesadas@uoc.edu
+  **Github:** [xaviku91](https://github.com/xaviku91)
 
-- **Nombre:** 
-  **Correo:** 
-  **Github:** 
+- **Nombre:** Josep de Trastàmara
+  **Correo:** [correo@ejemplo.com](mailto:correo@ejemplo.com)
+  **Github:** [usuario_github](https://github.com/usuario_github)
 
-- **Nombre:** 
-  **Correo:** 
-  **Github:** 
+- **Nombre:** Jordi Hortigüela Estrada
+  **Correo:** [correo@ejemplo.com](mailto:correo@ejemplo.com)
+  **Github:** [usuario_github](https://github.com/usuario_github)
 
-- **Nombre:** 
-  **Correo:** 
-  **Github:** 
+- **Nombre:** Robert Benavides Gómez
+  **Correo:** [correo@ejemplo.com](mailto:correo@ejemplo.com)
+  **Github:** [usuario_github](https://github.com/usuario_github)
 
-- **Nombre:** 
-  **Correo:** 
-  **Github:** 
+- **Nombre:** Albert López
+  **Correo:** [correo@ejemplo.com](mailto:correo@ejemplo.com)
+  **Github:** [usuario_github](https://github.com/usuario_github)
 
-- **Nombre:** 
-  **Correo:** 
-  **Github:** 
+- **Nombre:** Adrià Puigvert Avellaneda
+  **Correo:** [correo@ejemplo.com](mailto:correo@ejemplo.com)
+  **Github:** [usuario_github](https://github.com/usuario_github)
+
 
 
 ## **2. METODOLOGÍA Y SEGUIMIENTO:**
