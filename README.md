@@ -2,16 +2,16 @@
 
 Este repositorio es utilizado para el desarrollo del videojuego creado por el grupo **_vrxperience_** en el proyecto de _(P)Diseño y programación de un videojuego en VR/AR_ de la **_[UOC](https://www.uoc.edu/portal/es/index.html)_** (Universitat Oberta de Catalunya).
 
-## **1. INTEGRANTES DEL EQUIPO DE DESARROLLO:**
+## 1. INTEGRANTES DEL EQUIPO DE DESARROLLO:
 
-- **Nombre:** Xavi Quesada Sevillano 
+- **Nombre:** Xavi Quesada Sevillano
   **Correo:** xquesadas@uoc.edu
   **Github:** [xaviku91](https://github.com/xaviku91)
 
 - **Nombre:** Josep de Trastàmara
   **Correo:** [correo@ejemplo.com](mailto:correo@ejemplo.com)
   **Github:** [usuario_github](https://github.com/usuario_github)
-
+  
 - **Nombre:** Jordi Hortigüela Estrada
   **Correo:** [correo@ejemplo.com](mailto:correo@ejemplo.com)
   **Github:** [usuario_github](https://github.com/usuario_github)
