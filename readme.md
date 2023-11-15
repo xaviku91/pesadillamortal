@@ -1,26 +1,20 @@
-# Nombre del Proyecto
+# Diseño
 
-Descripción del proyecto.
+En esta rama, nos centramos en el diseño del juego. Aquí encontrarás detalles sobre la interfaz de usuario, las texturas, el tema visual y el desarrollo de niveles. Además, se proporciona información sobre cómo organizar los archivos de diseño.
 
-## Instrucciones para Clonar
+## Interfaz de Usuario
 
-1. Clona el repositorio: `git clone https://github.com/tu-usuario/tu-repositorio.git`
-2. Ingresa al directorio del proyecto: `cd tu-repositorio`
+- Descripción detallada de la estructura y elementos de la interfaz de usuario.
 
-## Contribuciones
+## Texturas y Tema Visual
 
-¡Contribuciones son bienvenidas! Por favor, sigue estas [instrucciones](CONTRIBUTING.md).
+- Información sobre las texturas utilizadas y la dirección del tema visual.
 
-## Estructura de Carpetas
+## Desarrollo de Niveles
 
-- `/src`: Código fuente del proyecto.
-- `/docs`: Documentación del proyecto.
+- Planificación y detalles sobre el diseño de niveles.
 
-## Configuración Adicional
+## Organización de Archivos de Diseño
 
-1. Instala las dependencias: `npm install`
-2. Configura el archivo de entorno: `.env`
+- Instrucciones sobre cómo deben organizarse los archivos de diseño en esta rama.
 
-## Contacto
-
-Para preguntas o problemas, contáctanos en [correo@example.com](mailto:correo@example.com).
