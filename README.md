@@ -21,8 +21,8 @@ Este repositorio es utilizado para el desarrollo del videojuego creado por el gr
   **Github:** [Warrio111](https://github.com/Warrio111)
 
 - **Nombre:** Albert López  
-  **Correo:** [correo@ejemplo.com](mailto:correo@ejemplo.com)  
-  **Github:** [usuario_github](https://github.com/usuario_github)
+  **Correo:** [alopezpaj@uoc.edu](mailto:correo@ejemplo.com)  
+  **Github:** [Albertlp93](https://github.com/usuario_github)
 
 - **Nombre:** Adrià Puigvert Avellaneda  
   **Correo:** [correo@ejemplo.com](mailto:correo@ejemplo.com)  
