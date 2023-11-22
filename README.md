@@ -63,7 +63,7 @@ cd pesadillamortal
 Asegúrate de tener la última versión de la rama Main antes de empezar a trabajar en tu desarrollo.
 
 ```bash
-
+git fetch origin
 git checkout main
 git pull origin main
 ```
