@@ -5,66 +5,56 @@ using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour
 {
+
+    public GameObject ObjetoMenuPausa;
+    public bool Pausa = false;
+    
+
     // Start is called before the first frame update
-    public bool pausa = false;
-    public GameObject Menupause;
-    public GameObject MenuSalir;
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (pausa == false)
+
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            if (Pausa == false)
             {
-                Menupause.SetActive(true);
-                pausa = true;
-                Time.timeScale = 0;
+                ObjetoMenuPausa.SetActive(true);
+                Pausa = true;
+
+                Time.timeScale = 0f; 
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
-                AudioSource[] sonidos = FindObjectsOfType<AudioSource>();
-
-                for(int a= 0; a< sonidos.Length; a++)
-                {
-                    sonidos[a].Pause();
-                }
-
             }
-            else if (pausa == true)
+            else if (Pausa == true)
             {
-                Volver();
-            }
+                Reanudar();
+            }   
         }
     }
-    public void Volver()
+
+    public void Reanudar()
     {
-        Menupause.SetActive(false);
-        MenuSalir.SetActive(false);
-        pausa = false;
-        Time.timeScale = 1;
+        ObjetoMenuPausa.SetActive(false);
+        Pausa = false;
+
+        Time.timeScale = 1f;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-
-        AudioSource[] sonidos = FindObjectsOfType<AudioSource>();
-
-        for (int a = 0; a < sonidos.Length; a++)
-        {
-            sonidos[a].Play();
-        }
     }
 
-    public void AlMenu(string nombremenu)
+    public void IrAlMenu(string NombreMenu)
     {
-        SceneManager.LoadScene(nombremenu);
-
+        SceneManager.LoadScene(NombreMenu);
     }
 
-    public void SalirJuego()
+    public void Salir()
     {
-        Application.Quit(); 
+        Application.Quit();
     }
+
 }
