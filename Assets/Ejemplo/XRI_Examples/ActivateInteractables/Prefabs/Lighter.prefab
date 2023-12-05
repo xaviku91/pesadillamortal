@@ -971,6 +971,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 96465223918091920, guid: f49dc5cd64a1e004c988509fc919b348, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 96465223918091920, guid: f49dc5cd64a1e004c988509fc919b348, type: 3}
       propertyPath: m_InteractionLayerMask.m_Bits
       value: 1
       objectReference: {fileID: 0}
