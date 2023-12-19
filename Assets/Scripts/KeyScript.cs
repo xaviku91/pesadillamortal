@@ -11,7 +11,7 @@ public class KeyScript : MonoBehaviour
         if (other.tag == "Player")
         {
             doorToOpen.isUnlocked = true;
+            Destroy(gameObject); 
         }
-        Destroy(gameObject);
     }
 }
