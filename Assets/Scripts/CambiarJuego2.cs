@@ -11,7 +11,7 @@ public class CambiarJuego2 : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene("JuegoTwo");
+            CargaNivel.NivelCarga("JuegoTwo");
         }
     }
 
