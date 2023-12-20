@@ -7,6 +7,6 @@ public class CambiarNivel : MonoBehaviour
 {
     public void CambiarEscena()
     {
-        SceneManager.LoadScene("JuegoThree");
+        CargaNivel.NivelCarga("JuegoThree"); 
     }
 }
