@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Juego3/JuegoThree.unity
     guid: d61730f36a50f6b4294fc74a2bb9c53a
   - enabled: 1
+    path: Assets/Scenes/EndScene/EndScene.unity
+    guid: 219033648a6268843bf682239697634b
+  - enabled: 1
     path: Assets/Scenes/Otros/opciones.unity
     guid: bca228ef0a58283469a1416eaa1ca025
   - enabled: 1
