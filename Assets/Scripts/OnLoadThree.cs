@@ -30,7 +30,7 @@ public class OnLoadThree : MonoBehaviour
             if (playerObject != null)
             {
                 // Modificamos la posicion del player con el uso de un Vector3
-                playerObject.transform.position = new Vector3(-22f, -0.2f, 50f);
+                playerObject.transform.position = new Vector3(-6f, -1.08f, 45f);
                 // Imprime las coordenadas iniciales del objeto Player
                 Debug.Log("Posición inicial de Player: " + playerObject.transform.position);
             }
