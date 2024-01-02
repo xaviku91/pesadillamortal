@@ -10,6 +10,7 @@ TagManager:
   - MiniWorldCamera
   - Water
   - ObjetoLinterna
+  - DoorKey
   layers:
   - Default
   - TransparentFX

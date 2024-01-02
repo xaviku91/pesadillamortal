@@ -9,7 +9,7 @@ public class CambiarJuego2 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "DoorKey")
         {
             CargaNivel.NivelCarga("JuegoTwo");
         }
