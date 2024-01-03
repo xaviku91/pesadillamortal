@@ -1,97 +1,113 @@
 ﻿using UnityEngine;
 using EasyUI.PickerWheelUI;
-using UnityEngine.UI;
+using UnityEngine.UI;  // Agrega esta línea para evitar la ambigüedad
 using System.IO;
 using System.Xml.Serialization;
 
-[Serializable]
-public class PlayerData
+public class PuntuacionData
 {
-    [XmlElement("Puntos")] // Esto indica el nombre del elemento XML para el campo 'puntos'
-   public int puntos;
+    public int Puntos;
 }
 
 public class Demo : MonoBehaviour
 {
-   [SerializeField] private Button uiSpinButton;
-   [SerializeField] private Text uiSpinButtonText;
-   [SerializeField] private PickerWheel pickerWheel;
-   [SerializeField] private Text uiTextNumberPoints;
+    [SerializeField] private Button uiSpinButton;
+    [SerializeField] private UnityEngine.UI.Text uiSpinButtonText;  // Asegúrate de usar UnityEngine.UI.Text
+    [SerializeField] private PickerWheel pickerWheel;
+    [SerializeField] private UnityEngine.UI.Text uiTextNumberPoints;  // Asegúrate de usar UnityEngine.UI.Text
 
-   private PlayerData playerData;
+    private int puntos;
 
-   private void Start()
-   {
+    private void Start()
+    {
         CargarPuntuacion(); // Intenta cargar la puntuación al inicio
 
-      uiSpinButton.onClick.AddListener(() =>
-      {
+        uiSpinButton.onClick.AddListener(() =>
+        {
             uiSpinButton.interactable = false;
             uiSpinButtonText.text = "Girando";
 
-            pickerWheel.OnSpinEnd(wheelPiece =>
+            // Comprueba si pickerWheel es nulo antes de usarlo
+            if (pickerWheel != null)
             {
-               Debug.Log(
-                  @" <b>Indice:</b> " + wheelPiece.Index + "           <b>Mounstruo:</b> " + wheelPiece.Label
-                  + "\n <b>Cantidad:</b> " + wheelPiece.Amount + "      <b>Probabilidad:</b> " + wheelPiece.Chance + "%"
-               );
+                pickerWheel.OnSpinEnd(wheelPiece =>
+                {
+                    Debug.Log(
+                        @" <b>Indice:</b> " + wheelPiece.Index + "           <b>Mounstruo:</b> " + wheelPiece.Label
+                        + "\n <b>Cantidad:</b> " + wheelPiece.Amount + "      <b>Probabilidad:</b> " + wheelPiece.Chance + "%"
+                    );
 
-               SumarPuntos(wheelPiece.Amount);
+                    SumarPuntos(wheelPiece.Amount);
 
-               uiSpinButton.interactable = true;
-               uiSpinButtonText.text = "Girar";
-            });
+                    uiSpinButton.interactable = true;
+                    uiSpinButtonText.text = "Girar";
+                });
 
-            pickerWheel.Spin();
-      });
-   }
+                pickerWheel.Spin();
+            }
+            else
+            {
+                Debug.LogError("PickerWheel no está asignado. Asegúrate de asignarlo en el Inspector de Unity.");
+            }
+        });
+    }
 
-   private void SumarPuntos(int puntos)
-   {
-      playerData.puntos += puntos;
-      GuardarPuntuacion();
-      ActualizarPuntosTexto();
-   }
+    private void SumarPuntos(int puntosGanados)
+    {
+        puntos += puntosGanados;
+        GuardarPuntuacion();
+        ActualizarPuntosTexto();
+    }
 
-   private void ActualizarPuntosTexto()
-   {
-      if (uiTextNumberPoints != null)
-      {
-            uiTextNumberPoints.text = playerData.puntos.ToString();
-      }
-   }
+    private void ActualizarPuntosTexto()
+    {
+        if (uiTextNumberPoints != null)
+        {
+            uiTextNumberPoints.text = puntos.ToString();
+        }
+    }
 
-   private void GuardarPuntuacion()
-   {
-      var serializer = new XmlSerializer(typeof(PlayerData));
-      using (var stream = new FileStream(GetRutaArchivo(), FileMode.Create))
-      {
-            serializer.Serialize(stream, playerData);
-      }
-   }
+    private void GuardarPuntuacion()
+    {
+        var puntosData = new PuntuacionData { Puntos = puntos };
 
-   private void CargarPuntuacion()
-   {
-      var serializer = new XmlSerializer(typeof(PlayerData));
+        var serializer = new XmlSerializer(typeof(PuntuacionData));
+        using (var stream = new FileStream(GetRutaArchivo(), FileMode.Create))
+        {
+            serializer.Serialize(stream, puntosData);
+        }
+        Debug.Log("Puntuación guardada en: " + GetRutaArchivo());
+    }
 
-      try
-      {
+    private void CargarPuntuacion()
+    {
+        var serializer = new XmlSerializer(typeof(PuntuacionData));
+
+        if (File.Exists(GetRutaArchivo()))
+        {
             using (var stream = new FileStream(GetRutaArchivo(), FileMode.Open))
             {
-               playerData = (PlayerData)serializer.Deserialize(stream);
-               ActualizarPuntosTexto();
+                var puntosData = serializer.Deserialize(stream) as PuntuacionData;
+                if (puntosData != null)
+                {
+                    puntos = puntosData.Puntos;
+                    ActualizarPuntosTexto();
+                    Debug.Log("Puntuación cargada desde: " + GetRutaArchivo());
+                }
+                else
+                {
+                    Debug.LogError("Error al deserializar los datos de puntuación.");
+                }
             }
-      }
-      catch (FileNotFoundException)
-      {
-            // El archivo no existe, crea uno nuevo.
-            playerData = new PlayerData();
-            GuardarPuntuacion();
-      }
-   }
+        }
+        else
+        {
+            Debug.Log("No se encontró el archivo de puntuación en: " + GetRutaArchivo());
+        }
+    }
 
-   private string GetRutaArchivo()
-   {
-      return Path.Combine(Application.persistentDataPath, "playerData.xml");
-   }
+    private string GetRutaArchivo()
+    {
+        return Path.Combine(Application.persistentDataPath, "puntosData.xml");
+    }
 }
