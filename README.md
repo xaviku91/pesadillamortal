@@ -1,34 +1,35 @@
+# Interfaz Gráfica de la Ruleta:
+El juego trata de una ruleta en AR, fácil de usar en nuestro dispositivo.
 
-# Easy Fortune Spin Wheel UI
-A powerful,Customizable, and esay-to-use Spin Wheel UI for Unity
-
-### Video tutorial : https://youtu.be/jZ_cuxTPPsA
 <br>
 
-## ■ How to use?  :
-### 1. Add ```DoTween``` package: http://dotween.demigiant.com/download.php
-### 2. Add ```EasyUI_PickerWheel``` package.
-### 3. Create a Canvas and add```PickerWheel``` prefab to it.
+## ■ Pasos a seguir:
+### 1. Primero necesitamos el paquete ```DoTween```: [Descargar aquí](http://dotween.demigiant.com/download.php)
+### 2. Seguidamente añadimos el paquete ```EasyUI_PickerWheel```.
+### 3. Despues creamos un Canvas y añade el prefab ```PickerWheel``` a él.
 ```Assets/PickerWheel/Prefabs/PickerWheel.prefab```
-### 4. Create a ```Demo.cs``` script.
-### 5. Add ```EasyUI.PickerWheelUI``` namespace.
-### 6. Demo.cs :
+### 4. Necesitaremos crear un script llamado ```Demo.cs```.
+### 5. Agregamos el espacio de nombres ```EasyUI.PickerWheelUI```.
+### 6. Codigo del script ```Demo.cs```:
 ```c#
 using UnityEngine;
-using EasyUI.PickerWheelUI;   //required
+using EasyUI.PickerWheelUI;   // necesario
 
 public class Demo : MonoBehaviour {
-	// Reference to the PickerWheel GameObject (step 3):
+	// Referencia al GameObject PickerWheel (paso 3):
 	[SerializeField] private PickerWheel pickerWheel;
 	
 	private void Start () {
-		// Start spinning:
+		// Comienza a girar:
 		pickerWheel.Spin ();
 	}
 }
 ```
 
-## ■ Wheel Events : ```OnSpinStart ```  and  ```OnSpinEnd ```  :
+<br>
+
+## ■ Eventos de la Ruleta: OnSpinStart y OnSpinEnd:
+
 ```c#
 using UnityEngine;
 using EasyUI.PickerWheelUI;
@@ -38,25 +39,22 @@ public class Demo : MonoBehaviour {
 	
 	private void Start () {
 		pickerWheel.OnSpinStart (() =>  {
-			Debug.Log ("Spin start..."));
+			Debug.Log ("Inicio del giro...");
 		});
 
 		pickerWheel.OnSpinEnd (wheelPiece => {
-			Debug.Log ("Spin end :") ;
-			Debug.Log ("Index   : "+wheelPiece.Index);
-			Debug.Log ("Chance  : "+wheelPiece.Chance);
-			Debug.Log ("Label   : "+wheelPiece.Label);
-			Debug.Log ("Amount  : "+wheelPiece.Amount);
+			Debug.Log ("Fin del giro:");
+			Debug.Log ("Índice   : " + wheelPiece.Index);
+			Debug.Log ("Probabilidad  : " + wheelPiece.Chance);
+			Debug.Log ("Etiqueta   : " + wheelPiece.Label);
+			Debug.Log ("Cantidad  : " + wheelPiece.Amount);
 		});
 
 		pickerWheel.Spin ();
 	}
-}
+ }
 ```
-
 
 <br><br>
 <br>
-## ❤️ Donate  
-<a href="https://paypal.me/hamzaherbou" title="https://paypal.me/hamzaherbou" target="_blank"><img align="left" height="50" src="https://www.mediafire.com/convkey/72dc/iz78ys7vtfsl957zg.jpg" alt="Paypal"></a>
 
