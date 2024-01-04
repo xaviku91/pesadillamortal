@@ -12,6 +12,8 @@ public class PuntuacionData
 public class Demo : MonoBehaviour
 {
     [SerializeField] private Button uiSpinButton;
+    [SerializeField] private Button uiResetPointsButton;
+    [SerializeField] private Button uiCloseGameButton;
     [SerializeField] private UnityEngine.UI.Text uiSpinButtonText;  // Asegúrate de usar UnityEngine.UI.Text
     [SerializeField] private PickerWheel pickerWheel;
     [SerializeField] private UnityEngine.UI.Text uiTextNumberPoints;  // Asegúrate de usar UnityEngine.UI.Text
@@ -22,7 +24,7 @@ public class Demo : MonoBehaviour
     {
         CargarPuntuacion(); // Intenta cargar la puntuación al inicio
 
-        uiSpinButton.onClick.AddListener(() =>
+        uiSpinButton.onClick.AddListener(() =>  
         {
             uiSpinButton.interactable = false;
             uiSpinButtonText.text = "Girando";
@@ -50,8 +52,15 @@ public class Demo : MonoBehaviour
                 Debug.LogError("PickerWheel no está asignado. Asegúrate de asignarlo en el Inspector de Unity.");
             }
         });
+        uiCloseGameButton.onClick.AddListener(() => Application.Quit());
+        uiResetPointsButton.onClick.AddListener(() => ResetearPuntos());
     }
-
+    private void ResetearPuntos()
+    {
+        puntos = 0;
+        GuardarPuntuacion();
+        ActualizarPuntosTexto();
+    }
     private void SumarPuntos(int puntosGanados)
     {
         puntos += puntosGanados;
