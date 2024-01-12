@@ -25,8 +25,8 @@ Este repositorio es utilizado para el desarrollo del videojuego creado por el gr
   **Github:** [Albertlp93](https://github.com/Albertlp93)
 
 - **Nombre:** Adrià Puigvert Avellaneda  
-  **Correo:** [User](https://github.com/)
-  **Github:** [User](https://github.com/)
+  **Correo:** [apuigverta@uoc.edu](mailto:apuigverta@uoc.edu)
+  **Github:** [Night2k](https://github.com/Night2k)
 
 
 ## **2. METODOLOGÍA Y SEGUIMIENTO:**
